@@ -1,3 +1,25 @@
+### LiveDemo
+(https://app.netlify.com/sites/guruji-astro-recipe/)
+
+### keyFeatures
+1.that allows you to discover an extensive array of recipes
+2.recipe suggestions based on your cart or favorite items.
+
+## Tech stack used
+1.React
+2.HTML
+3.Css
+4.Javascript
+
+## libraries
+1.Material-Ui
+2.React-Router-Dom
+
+## others
+1.Localstorage
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
