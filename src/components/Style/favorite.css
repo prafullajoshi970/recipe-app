@@ -1,0 +1,40 @@
+@media only screen and (min-width: 480px){.favoritecard{
+    width: 80%;
+    height:30%;
+    margin: auto;
+    border: 1px solid gray;
+}
+.fimage{
+    width: 50%;
+    margin-left: auto;
+}
+.fcard{
+    display: flex;
+    justify-content: space-around;
+    width:80%;
+   padding: 10px;
+}
+
+}
+@media only screen and (min-width: 992px)
+
+{.favoritecard{
+    width: 80%;
+    margin: auto;
+    border: 1px solid gray;
+}
+.fimage{
+    width: 40%;
+    margin-left: 30px;
+}
+.fcard{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    margin :20px
+    
+}
+.fhead{
+    margin-left: 40px;
+}
+}

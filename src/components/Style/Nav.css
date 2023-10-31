@@ -1,0 +1,53 @@
+
+@media only screen and (min-width: 360px) {
+   .navmain{
+    display: flex;
+    background-color: rgb(19, 18, 18);
+    color: aliceblue;
+
+   }
+   .navlogo{
+      margin-left: 10px;
+      font-size: small;
+   }
+   .navlinks{
+      margin: auto;
+     }
+    
+   .navatag{
+        text-decoration: none;
+        color: aliceblue;
+        margin-left:5px
+   }
+
+   .navbtn{
+    margin-top:32px ;
+    margin-right: 8px;
+    margin-left:8px;
+    color: aliceblue;
+    height: 35px;
+    width:65px;
+    border-radius: 5px;
+    background-color:  rgb(170, 66, 28);
+    border: none;
+   
+   }
+}
+
+@media only screen and (min-width: 992px){
+   .navlogo{
+      margin-left: 20px;
+      font-size: small;
+   }
+   .navlinks{
+    
+     width:50%;
+     display: flex;
+     justify-content: space-around;
+     }
+     .navbtn{
+      margin-top:15px ;
+      height: 35px;
+      width:100px;
+     }
+}

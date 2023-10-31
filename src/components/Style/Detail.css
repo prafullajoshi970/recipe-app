@@ -1,0 +1,64 @@
+
+
+@media only screen and (min-width: 480px){
+    .detailimg{
+        width:80%;
+        height:10%;
+        border:3px solid gray;
+        border-radius:10px;
+        margin-left: 30px ;
+    }
+    .detailcard h1{
+     margin: 30px ;
+    }
+    .timetomake{
+        display: flex;
+        justify-content: space-around;
+    }
+    .innercard{
+        width:80%;
+        margin: auto;
+       
+    }
+    .btn1{
+        margin-top:32px ;
+        margin-right: 8px;
+        margin-left:8px;
+        color: aliceblue;
+        height: 35px;
+        width:100px;
+        border-radius: 5px;
+        background-color:  rgb(170, 66, 28);
+        border: none;
+    }
+    .btn1:hover{
+        background-color:  rgb(218, 128, 95);
+    }
+}
+
+@media 
+    only screen and (min-width: 992px){
+        .detailimg{
+            width:30%;
+            height:10%;
+           align-items: center;
+           margin-left: 150px;
+        }
+        .timetomake{
+            display: flex;
+          justify-content: space-evenly;
+          width:30%;
+          margin-left: 150px;
+            
+        }
+        .detailcard{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+           
+        }
+        .detailcard h1{
+            margin: 30px ;
+            margin-left: 150px ;
+           }
+    }
