@@ -1,15 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState} from "react";
 import NavBar from "./NavBar";
 import "./Style/recipesearch.css";
 import TextField from "@mui/material/TextField";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import FavoriteIcon from "@mui/icons-material/Favorite";
 import { Link } from "react-router-dom";
 
 const Recipesearch = () => {
   const [input, setInput] = useState("mango");
   const [search, setSearch] = useState("");
-  const [count, setCount] = useState(NaN);
+  const [cart, setCart] = useState([]);
+ 
   console.log(search);
   const [data, setData] = useState([]);
   console.log(typeof data);
@@ -19,18 +18,22 @@ const Recipesearch = () => {
     setSearch(input);
     setInput("");
   };
-  console.log(count);
-  const fetchapi = () => {
+ 
+  useEffect(()=>{
     fetch(
-      `https://api.spoonacular.com/food/products/search?query=${search}&apiKey=f0731ddc12b9414bafa8ca1d6f43a32a`
+      `https://api.spoonacular.com/food/products/search?query=${search}&apiKey=59f929ea77e442a6902f74e6a3a69ed0`
     )
       .then((resp) => resp.json())
       .then((data) => setData(data.products))
       .catch((err) => console.log(err));
-  };
-  useEffect(() => {
-    fetchapi();
-  });
+  },[search])
+  const setItem = (product) => {
+    const updatedCart = [...cart, product];
+    setCart(updatedCart);
+    localStorage.setItem('recipe', JSON.stringify(updatedCart));
+  }
+ 
+ 
   return (
     <div>
       <div className="recipesearchmain">
@@ -51,7 +54,7 @@ const Recipesearch = () => {
               className="searchtext"
               onChange={(e) => setInput(e.target.value)}
             />
-            <button type="submit" className="searchbtn" onClick={fetchapi}>
+            <button type="submit" className="searchbtn" >
               Search
             </button>
           </form>
@@ -73,17 +76,12 @@ const Recipesearch = () => {
                 </div>
                 <div className="cardfooter">
                   <button className="detailbtn">
-                    <Link to={`/Detail/${ele.id}`} className="link">
+                    <Link to={`/Detail/${ele.id}`}  className="link">
                       Detail
                     </Link>
                   </button>
-                  {count ? (
-                    <FavoriteIcon onClick={() => setCount(0)}></FavoriteIcon>
-                  ) : (
-                    <FavoriteBorderIcon
-                      onClick={() => setCount(1)}
-                    ></FavoriteBorderIcon>
-                  )}
+                 
+                 <button className="detailbtn" onClick={()=>setItem(ele)}>Favorite</button>
                 </div>
               </div>
             );

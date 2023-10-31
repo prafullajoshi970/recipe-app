@@ -14,6 +14,14 @@
     width:80%;
    padding: 10px;
 }
+.fitem{
+    margin:10px;
+   
+}
+.favoritecard{
+    border: 1px solid;
+}
+
 
 }
 @media only screen and (min-width: 992px)
