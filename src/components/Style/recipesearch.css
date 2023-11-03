@@ -62,21 +62,23 @@
       display: flex;
       justify-content: space-around;
       align-items: center;
-      height:20%
+      height:20%;
+      margin: auto;
     }
     .detailbtn{
     background-color:rgb(170, 66, 28);
     border: none;
     width: 50%;
     height:30px;
-    margin-left: 5%;
+    margin:3px;
+    text-decoration: none;
     border-radius: 5px;
     align-items: center;
     text-align: center;
     color:aliceblue
     }
     .detailbtn:hover{
-      background-color: rgb(170, 77, 43);;
+      background-color: rgb(157, 170, 43);;
     }
 }
 @media only screen and (min-width: 992px) {

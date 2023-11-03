@@ -1,6 +1,7 @@
 import "./Style/Nav.css";
 import { Link } from "react-router-dom";
-const NavBar = () => {
+const NavBar = (props) => {
+  console.log(props)
   return (
     <div className="navmain">
       <div className="navlogo">
@@ -20,7 +21,7 @@ const NavBar = () => {
 
       <div>
         {" "}
-        <button className="navbtn">Login</button>
+        <button className="navbtn">🛒{props.data}</button>
       </div>
     </div>
   );

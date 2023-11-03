@@ -8,11 +8,10 @@ const Recipesearch = () => {
   const [input, setInput] = useState("mango");
   const [search, setSearch] = useState("");
   const [cart, setCart] = useState([]);
- 
-  console.log(search);
+ const [count,setCount]=useState(0)
   const [data, setData] = useState([]);
   console.log(typeof data);
-  console.log(data);
+  console.log(count);
   const handleSubmit = (e) => {
     e.preventDefault();
     setSearch(input);
@@ -26,10 +25,12 @@ const Recipesearch = () => {
       .then((resp) => resp.json())
       .then((data) => setData(data.products))
       .catch((err) => console.log(err));
+
   },[search])
   const setItem = (product) => {
     const updatedCart = [...cart, product];
     setCart(updatedCart);
+    setCount((prev)=>prev+1)
     localStorage.setItem('recipe', JSON.stringify(updatedCart));
   }
  
@@ -37,7 +38,7 @@ const Recipesearch = () => {
   return (
     <div>
       <div className="recipesearchmain">
-        <NavBar></NavBar>
+        <NavBar data={count}></NavBar>
         <div className="recipehead">
           <h1>
             "Where Tase Meets Technology - Find Cook, and Share the Goodness
@@ -81,7 +82,7 @@ const Recipesearch = () => {
                     </Link>
                   </button>
                  
-                 <button className="detailbtn" onClick={()=>setItem(ele)}>Favorite</button>
+                 <button className="detailbtn" onClick={()=>setItem(ele) }>Favorite</button>
                 </div>
               </div>
             );
