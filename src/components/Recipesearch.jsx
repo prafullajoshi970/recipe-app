@@ -31,14 +31,16 @@ const Recipesearch = () => {
     const updatedCart = [...cart, product];
     setCart(updatedCart);
     setCount((prev)=>prev+1)
+    localStorage.setItem('cartcount', JSON.stringify(count))
     localStorage.setItem('recipe', JSON.stringify(updatedCart));
   }
+  const count1 = JSON.parse(localStorage.getItem("cartcount"));
  
  
   return (
     <div>
       <div className="recipesearchmain">
-        <NavBar data={count}></NavBar>
+        <NavBar data={count1}></NavBar>
         <div className="recipehead">
           <h1>
             "Where Tase Meets Technology - Find Cook, and Share the Goodness

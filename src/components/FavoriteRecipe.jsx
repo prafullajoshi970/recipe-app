@@ -5,11 +5,11 @@ import "./Style/favorite.css";
 const FavoriteRecipe = () => {
   const storedUser = JSON.parse(localStorage.getItem("recipe"));
   console.log(storedUser);
- 
+  const count1 = JSON.parse(localStorage.getItem("cartcount"));
 
   return (
     <div>
-      <NavBar></NavBar>
+      <NavBar data={count1}></NavBar>
 
       <h1 className="fhead">favorite recipes</h1>
       <div className="favoritecard">
